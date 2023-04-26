@@ -4,14 +4,9 @@ app = Flask(__name__)
 
 
 import pandas as pd
-import numpy as np
-import seaborn as sns
-import numpy as np
-import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import r2_score
-import matplotlib.pyplot as plt
 import math
 import warnings
 warnings.filterwarnings("ignore")
@@ -61,13 +56,7 @@ def returnascii():
     d['runs'] = answer2
     return d
 
-    response = jsonify(d)
-    response.headers['Content-Encoding'] = 'gzip'
-    compressed = io.BytesIO()
-    with gzip.GzipFile(fileobj=compressed, mode='w') as f:
-        f.write(response.data)
-    return compressed.getvalue()
-
+  
 
 if __name__ =="__main__":
     app.run()
