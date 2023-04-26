@@ -61,5 +61,13 @@ def returnascii():
     d['runs'] = answer2
     return d
 
+    response = jsonify(d)
+    response.headers['Content-Encoding'] = 'gzip'
+    compressed = io.BytesIO()
+    with gzip.GzipFile(fileobj=compressed, mode='w') as f:
+        f.write(response.data)
+    return compressed.getvalue()
+
+
 if __name__ =="__main__":
     app.run()
