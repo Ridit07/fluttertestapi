@@ -17,7 +17,7 @@ import warnings
 warnings.filterwarnings("ignore")
 
 # Load the dataset
-df = pd.read_csv("C:\project work\sbatting2.csv")
+df = pd.read_csv("sbatting2.csv")
 s='null'
 pred='nulla'
 def abc(balls,teamname,batsmanname):
